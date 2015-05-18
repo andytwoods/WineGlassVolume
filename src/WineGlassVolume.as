@@ -59,7 +59,7 @@ package
 		{
 			var defaultType:String;
 			var image:Image;
-			var output:Array = [['type','num','wineHeight','voxel_volume','pixels','filename'].join("\t")];
+			var output:Array = [['type','num','wineHeight','voxel_volume','pixels','filename','expectedMl'].join("\t")];
 			
 			for(var i:int=0;i<images.length;i++){
 				image = images[i]	
@@ -196,7 +196,7 @@ class Image{
 	
 	public function output():String
 	{
-		return([defaultType,id,wineHeight,volume,area, name].join("\t"));
+		return([defaultType,id,wineHeight,volume,area, name,((id-1)*5)].join("\t"));
 		
 	}
 	
@@ -272,7 +272,7 @@ class Default {
 	public function output():Object
 	{
 
-
+	
 		return (['ref','ref',-1,vol,-1, image.name].join("\t"));
 	}
 }
